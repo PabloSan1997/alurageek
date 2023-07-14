@@ -5,15 +5,17 @@ import { crearProducto } from './routers';
 import { boomHandle } from './middlewares/boomHandle';
 import { AppDataSource } from './db/config';
 import 'dotenv/config';
+import { validarHeaders } from './middlewares/validarHeader';
 
 (async () => {
     try {
         const app = express();
         const PORT = process.env.PORT || 3001;
         await AppDataSource.initialize();
-    
         app.use(cors());
 
+        app.use(express.json());
+        app.use(validarHeaders);
         crearProducto(app);
         app.use(boomHandle);
 

@@ -3,14 +3,14 @@ import {Entity, Column, PrimaryColumn} from 'typeorm';
 @Entity()
 export class Users{
     @PrimaryColumn()
-    id_products:string;
+    id_users:string;
 
     @Column()
     nombre:string;
 
-    @Column()
+    @Column({unique:true})
     email:string;
 
     @Column()
-    password:string;
+    contra:string;
 }
