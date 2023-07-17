@@ -1,9 +1,13 @@
 import { Response, Request, NextFunction } from 'express';
+import 'dotenv/config';
 import { AppDataSource } from '../db/config';
 import { Users } from '../db/models/UserModels';
 import { v4 as uuid4 } from 'uuid';
 import bcrypt from 'bcrypt';
 import boom from '@hapi/boom';
+import jwt from 'jsonwebtoken';
+import { PALABRA } from '../config/variables';
+
 
 export class UserController {
     async leerUsuarios(req: Request, res: Response) {
@@ -12,7 +16,7 @@ export class UserController {
     async agregarUsuario(req: Request, res: Response, next: NextFunction) {
         try {
             const repositorio = AppDataSource.getRepository(Users);
-            const { nombre, email, contra } = req.body as Usuario;
+            const { nombre, email, contra, superUusario } = req.body as Usuario;
             const ver = await repositorio.find({ where: { email } });
             if (ver.length > 0) {
                 throw 'Ese usuario ya existe';
@@ -24,6 +28,7 @@ export class UserController {
             nuevoUsuario.email = email;
             nuevoUsuario.nombre = nombre;
             nuevoUsuario.id_users = id_users;
+            nuevoUsuario.superUusario=superUusario;
             repositorio.manager.save(nuevoUsuario);
             res.status(201).json({ message: 'Usuario agregado con exito' })
         } catch (error) {
@@ -32,17 +37,27 @@ export class UserController {
         }
     }
     async iniciarSeccion(req: Request, res: Response, next: NextFunction) {
-        const { email, contra } = req.body as Inicio;
-        const repositorio = AppDataSource.getRepository(Users);
-        const usuario = await repositorio.find({ where: { email } });
-        if (usuario.length == 0) {
-            next(boom.badRequest('No se encontró usuario'));
-        }
-        const ver = await bcrypt.compare(contra, usuario[0].contra);
-        if (!ver) {
-            next(boom.badRequest('Contraceña incorrecta'));
-        } else {
-            res.json(usuario[0]);
+        try {
+            const { email, contra } = req.body as Inicio;
+            const repositorio = AppDataSource.getRepository(Users);
+            const usuario = await repositorio.find({ where: { email } });
+            if (usuario.length == 0 || !PALABRA) {
+                throw boom.badRequest('No se encontró usuario');
+            }
+            const ver = await bcrypt.compare(contra, usuario[0].contra);
+            if (!ver) {
+                throw boom.badRequest('Contraceña incorrecta');
+            }
+            const dato = await repositorio.findOneBy({ id_users: usuario[0].id_users });
+            if (!dato?.contra) {
+                throw boom.badRequest('No se encontró usuario');
+            }
+            dato.contra = await bcrypt.hash(contra, 5);
+            await repositorio.manager.save(dato);
+            const token = jwt.sign({...dato}, PALABRA);
+            res.json({token});
+        } catch (error) {
+            next(error);
         }
     }
 }
@@ -50,7 +65,8 @@ export class UserController {
 interface Usuario {
     nombre: string,
     email: string,
-    contra: string
+    contra: string,
+    superUusario:boolean
 }
 interface Inicio {
     email: string,

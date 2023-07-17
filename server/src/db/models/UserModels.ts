@@ -12,5 +12,8 @@ export class Users{
     email:string;
 
     @Column()
+    superUusario:boolean;
+    
+    @Column()
     contra:string;
 }

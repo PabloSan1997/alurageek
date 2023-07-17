@@ -2,8 +2,9 @@ import {DataSource} from 'typeorm';
 import { Productos } from './models/ProductosModels';
 import { Users } from './models/UserModels';
 import 'dotenv/config';
+import { URL_DATABASE } from '../config/variables';
 
-const {URL_DATABASE} = process.env
+
 
 export const AppDataSource = new DataSource({
     type: "postgres",

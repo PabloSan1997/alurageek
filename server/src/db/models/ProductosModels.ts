@@ -8,7 +8,7 @@ export class Productos{
     @Column()
     nombre:string;
 
-    @Column()
+    @Column('float')
     precio:number;
 
     @Column()
