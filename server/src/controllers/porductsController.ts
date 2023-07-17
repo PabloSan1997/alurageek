@@ -14,6 +14,32 @@ export class ProductosController {
             next(error);
         }
     }
+    async leerProductoCategoria(req: Request, res: Response, next: NextFunction){
+        const {categoria} = req.params;
+        const productosRepository = AppDataSource.getRepository(Productos);
+        try {
+            const productos = await productosRepository.find({where:{categoria}});
+            res.json(productos);
+        } catch (error) {
+            next(boom.notFound('No se encontraron elementos'));
+        }
+    }
+    async leerProductoUno(req: Request, res: Response, next: NextFunction){
+        const {id_product} = req.params;
+        const productosRepository = AppDataSource.getRepository(Productos);
+        try {
+            const productos = await productosRepository.find({where:{id_product}});
+            if(productos.length===0){
+                throw 'No existe ese producto';
+            }
+            res.json(productos[0]);
+        } catch (error) {
+            if(typeof error == 'string'){
+                next(boom.notFound(error));
+            }
+            next(boom.notFound('No se encontraron elementos'));
+        }
+    }
     async agregarProducto(req: Request, res: Response, next: NextFunction) {
         try {
             const productosRepository = AppDataSource.getRepository(Productos);

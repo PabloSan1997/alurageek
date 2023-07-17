@@ -9,3 +9,5 @@ routerProductos.get('/', servicios.leerProductos);
 routerProductos.post('/', autentificar, servicios.agregarProducto);
 routerProductos.delete('/:id_product', autentificar,servicios.borrarProducto);
 routerProductos.patch('/', autentificar ,servicios.editarProducto);
+routerProductos.get('/categoria/:categoria', servicios.leerProductoCategoria);
+routerProductos.get('/:id_product', servicios.leerProductoUno);
