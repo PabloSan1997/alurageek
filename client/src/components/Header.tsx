@@ -1,7 +1,13 @@
 import '../estilos/header.scss';
+import tituloLogo from '../asserts/tituloLogo.svg';
+import { Buscador } from './Buscador';
 
 export  function Header() {
   return (
-    <header>header</header>
+    <header>
+      <h1><img src={tituloLogo} alt="titulo logo" /></h1>
+      <Buscador/>
+      <button className='boton'>Login</button>
+    </header>
   )
 }
