@@ -8,3 +8,4 @@ export const userRouter = express.Router();
 userRouter.get('/', servicios.leerUsuarios);
 userRouter.post('/iniciar', servicios.iniciarSeccion);
 userRouter.post('/agregar', servicios.agregarUsuario);
+userRouter.post('/iniciarToken', servicios.inicarConToken);

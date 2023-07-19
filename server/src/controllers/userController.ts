@@ -55,10 +55,30 @@ export class UserController {
             dato.contra = await bcrypt.hash(contra, 5);
             await repositorio.manager.save(dato);
             const token = jwt.sign({...dato}, PALABRA);
-            res.json({token});
+            res.json({token, nombre:dato.nombre, entrada:true});
         } catch (error) {
             next(error);
         }
+    }
+    async inicarConToken(req: Request, res: Response, next: NextFunction){
+        const {token} = req.body;
+        if(!token){
+            res.json({entrada:false});
+        }
+        try {
+            const repositorio = AppDataSource.getRepository(Users);
+        const data = jwt.verify(token, PALABRA) as Usuario;
+        const usuario = await repositorio.find({where:{
+            email:data.email
+        }});
+        if(usuario.length===0 && usuario[0].superUusario){
+            throw 'No tienes permiso';
+        }
+        res.json({entrada:true, token, nombre:usuario[0].nombre});
+        } catch (error) {
+            res.json({entrada:false});
+        }
+        
     }
 }
 
