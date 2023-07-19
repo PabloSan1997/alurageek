@@ -17,7 +17,7 @@ export async function autentificar(req:Request, res:Response, next:NextFunction)
     const usuario = await repositorio.find({where:{
         email:data.email
     }});
-    if(usuario.length===0 && usuario[0].superUusario){
+    if(usuario.length===0 || !usuario[0].superUusario){
         throw 'No tienes permiso';
     }
     next();
