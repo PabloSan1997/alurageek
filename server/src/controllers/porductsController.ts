@@ -43,12 +43,13 @@ export class ProductosController {
     async agregarProducto(req: Request, res: Response, next: NextFunction) {
         try {
             const productosRepository = AppDataSource.getRepository(Productos);
-            const { nombre, precio, categoria, descripcion } = req.body as ProductoReq;
+            const { nombre, precio, categoria, descripcion, imageurl } = req.body as ProductoReq;
             const productoNuevo = new Productos();
             productoNuevo.id_product = uuidV4();
             productoNuevo.nombre = nombre;
             productoNuevo.descripcion = descripcion;
             productoNuevo.precio = precio;
+            productoNuevo.imageurl = imageurl;
             productoNuevo.categoria = categoria;
             await productosRepository.manager.save(productoNuevo);
             res.status(201).json({ message: 'Se agregó elemento con exito' });
@@ -96,12 +97,14 @@ type ProductoReq = {
     nombre: string,
     precio: number,
     categoria: string,
-    descripcion: string
+    descripcion: string,
+    imageurl:string
 }
 type ProductoReqRes = {
     id_product: string,
     nombre: string,
     precio: number,
     categoria: string,
-    descripcion: string
+    descripcion: string,
+    imageurl:string
 }

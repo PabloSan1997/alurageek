@@ -15,5 +15,8 @@ export class Productos{
     categoria:string;
 
     @Column()
+    imageurl:string
+
+    @Column()
     descripcion:string;
 }
