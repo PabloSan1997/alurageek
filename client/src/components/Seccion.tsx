@@ -13,7 +13,10 @@ export function Seccion({categoria}:Seccion) {
   
   return (
     <div className="seccion">
+      <div className="titulos">
       <h2>{categoria}</h2>
+      <Link to={`/products/categoria/${categoria}`}>Ver Todos →</Link>
+      </div>
       {productosCategoria.map(elementos=>(
         <Caja key={elementos.id_product} {...elementos}/>
       ))}
@@ -21,13 +24,13 @@ export function Seccion({categoria}:Seccion) {
   )
 }
 
-function Caja({nombre, precio, imageurl, categoria}:ProductoRes):JSX.Element{
+function Caja({nombre, precio, imageurl, id_product}:ProductoRes):JSX.Element{
   return(
     <div className="caja">
       <img src={imageurl} alt={nombre} />
       <h3>{nombre}</h3>
       <span>${precio}</span>
-      <Link to={`/products/${categoria}`} className='ver_todo'>Ver producto</Link>
+      <Link to={`/products/especifico/${id_product}`} className='ver_todo'>Ver producto</Link>
     </div>
   );
 }

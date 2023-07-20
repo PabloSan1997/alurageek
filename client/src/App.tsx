@@ -19,7 +19,7 @@ const Rutas = () => useRoutes([
     element:<Productos/>
   },
   {
-    path:'/products/:categoria',
+    path:'/products/categoria/:categoria',
     element:<Productos/>
   },
   {

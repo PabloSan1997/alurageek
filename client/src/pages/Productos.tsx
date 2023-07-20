@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { Header } from "../components/Header";
+import ContenedorCajas from "../components/ContenedorCajas";
 
 
 export function Productos() {
@@ -7,7 +8,8 @@ export function Productos() {
   return (
     <>
     <Header/>
-      {!categoria ? 'Productos' : categoria}
+      <h2>{!categoria ? 'Todos los productos' : categoria}</h2>
+      <ContenedorCajas categoria={categoria}/>
     </>
   )
 }
