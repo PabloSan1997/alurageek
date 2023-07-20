@@ -7,7 +7,7 @@ export  function Header() {
     <header>
       <h1><img src={tituloLogo} alt="titulo logo" /></h1>
       <Buscador/>
-      <button className='boton'>Login</button>
+      <button className='botonHeader'>Login</button>
     </header>
   )
 }

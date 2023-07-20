@@ -1,12 +1,14 @@
+import { urlBaseProductos } from "./info";
 
 export async function leerTodosLosProductos():Promise<ProductoRes[]>{
-    const solicitud = {
+    const solicitud:Solicitud = {
         method:'GET',
         headers:{
-            cabeza:'mvhola'
+            cabeza:'mvhola',
+            'Content-Type':'application/json'
         }
     }
-    const datos = await fetch('https://alurageekapi.onrender.com/api/v1/productos', solicitud);
+    const datos = await fetch(urlBaseProductos, solicitud);
     if(!datos.ok){
         throw 'Error al obtener datos';
     }

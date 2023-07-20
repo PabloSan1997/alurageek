@@ -1,13 +1,15 @@
+import { cabeza, urlBaseProductos } from "./info";
 
 
 export async function leerCategoria(categoria:string):Promise<ProductoRes[]>{
-    const solicitud = {
+    const solicitud: Solicitud = {
         method:'GET',
         headers:{
-            cabeza:'mvhola'
+            cabeza,
+            "Content-Type":"application/json"
         }
     }
-    const data = await fetch(`https://alurageekapi.onrender.com/api/v1/productos/categoria/${categoria}`, solicitud);
+    const data = await fetch(`${urlBaseProductos}/categoria/${categoria}`, solicitud);
     if(!data.ok){
         throw 'Problemas con los datos';
     }

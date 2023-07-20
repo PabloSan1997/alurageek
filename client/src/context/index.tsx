@@ -9,6 +9,7 @@ export function ProvedorContexto({ children }: PropsContexto) {
         void (async ()=>{
             try {
                 const data = await leerTodosLosProductos();
+                console.log(data);
                 setProductos(data);
             } catch (error) {
                 console.error(error);
@@ -26,4 +27,4 @@ export function ProvedorContexto({ children }: PropsContexto) {
     );
 }
 
-export const UseContexto = () => React.useContext(Contexto);
+export const UseContexto = () => React.useContext(Contexto) as Contexto;

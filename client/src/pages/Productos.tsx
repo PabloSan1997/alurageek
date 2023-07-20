@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom"
+import { Header } from "../components/Header";
 
 
-export  function Productos() {
-    const {categoria} = useParams();
+export function Productos() {
+  const { categoria } = useParams();
   return (
-    <div>{!categoria?'Productos':categoria}</div>
+    <>
+    <Header/>
+      {!categoria ? 'Productos' : categoria}
+    </>
   )
 }
