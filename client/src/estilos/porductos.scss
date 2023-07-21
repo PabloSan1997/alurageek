@@ -1,0 +1,13 @@
+@import './index.scss';
+.tituloProductos{
+    margin-left: 5%;
+    font-weight: 600;
+    color: $GrisLetra;
+}
+.contenedor{
+    width: 90%;
+    margin:20px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}

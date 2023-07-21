@@ -4,7 +4,7 @@ import '../estilos/bannerPromocional.scss';
 export function BannerPromocion() {
   const ir = useNavigate();
   const navegar = () => {
-    ir('/products/Consolas');
+    ir('/products/categoria/Consolas');
   }
   return (
     <div className="banner_promocion">
