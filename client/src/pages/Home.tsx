@@ -1,4 +1,5 @@
 import {Contactanos} from "../components/Contactanos";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Seccion } from "../components/Seccion";
 import { BannerPromocion } from "../components/bannerPromocion";
@@ -15,6 +16,7 @@ export  function Home() {
           <Seccion key={elemento} categoria={elemento}/>
         ))}
         <Contactanos/>
+        <Footer/>
     </>
   )
 }

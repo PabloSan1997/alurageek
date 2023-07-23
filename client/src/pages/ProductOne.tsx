@@ -6,6 +6,7 @@ import Descripcion from '../components/Descripcion';
 import { ProductosRelacionados } from '../components/ProductosRelacionados';
 import {Contactanos} from '../components/Contactanos';
 import { UseContexto } from '../context';
+import { Footer } from '../components/Footer';
 
 
 export function ProductOne() {
@@ -29,6 +30,7 @@ export function ProductOne() {
             <Descripcion {...producto} />
             <ProductosRelacionados categoria={producto.categoria}/>
             <Contactanos/>
+            <Footer/>
         </>
     )
 }

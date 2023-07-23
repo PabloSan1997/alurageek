@@ -5,6 +5,7 @@ import { Editar } from './pages/Editar';
 import {ProductOne} from './pages/ProductOne';
 
 
+
 const Rutas = () => useRoutes([
   {
     path:'/home',
