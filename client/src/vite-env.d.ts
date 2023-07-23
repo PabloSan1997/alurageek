@@ -48,7 +48,7 @@ interface Permiso {
 }
 
 interface Contexto {
-    productos:ProductoRes[]
+    data:null
 }
 
 //------Datos Seccion-----

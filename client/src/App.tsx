@@ -2,7 +2,7 @@ import {useRoutes, HashRouter, Navigate} from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Productos } from './pages/Productos';
 import { Editar } from './pages/Editar';
-import { Info } from './pages/Info';
+import {ProductOne} from './pages/ProductOne';
 
 
 const Rutas = () => useRoutes([
@@ -27,8 +27,8 @@ const Rutas = () => useRoutes([
     element:<Editar/>
   },
   {
-    path:'informacion',
-    element:<Info/>
+    path:'/products/especifico/:id_product',
+    element:<ProductOne/>
   }
 ]);
 
