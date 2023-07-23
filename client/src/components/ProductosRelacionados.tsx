@@ -2,13 +2,19 @@ import React from 'react'
 import { leerCategoria } from '../Api/leerCategoria';
 import { cortarInformacion } from '../utilities/cortarInfo';
 import { Caja } from './Seccion';
+import { UseContexto } from '../context';
 
 export function ProductosRelacionados({ categoria }: Seccion) {
     const [productosCategoria, setProductosCategoria] = React.useState<ProductoRes[]>([]);
+    const {productoSeleccionado} = UseContexto();
     React.useEffect(() => {
       leerCategoria(categoria)
-        .then(elementos => setProductosCategoria(cortarInformacion(elementos)))
+        .then(elementos => {
+          const elementosMuestra = elementos.filter(ele=>ele.id_product!==productoSeleccionado);
+          setProductosCategoria(cortarInformacion(elementosMuestra))
+        })
         .catch(error => console.error(error));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [categoria]);
   
     return (

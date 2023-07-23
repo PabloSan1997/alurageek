@@ -5,19 +5,23 @@ import { initialSTate, leerUnoProducto } from '../Api/leerUnoProducto';
 import Descripcion from '../components/Descripcion';
 import { ProductosRelacionados } from '../components/ProductosRelacionados';
 import {Contactanos} from '../components/Contactanos';
+import { UseContexto } from '../context';
 
 
 export function ProductOne() {
     const { id_product } = useParams();
+    const {setProductoSeleccionado} = UseContexto();
     const [producto, setProducto] = React.useState<ProductoRes>(initialSTate);
     React.useEffect(() => {
         if (id_product) {
             void (async () => {
                 const data = await leerUnoProducto(id_product);
                 setProducto(data);
+                setProductoSeleccionado(id_product);
             })();
         }
     }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         , [id_product]);
     return (
         <>

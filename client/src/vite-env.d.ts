@@ -48,7 +48,10 @@ interface Permiso {
 }
 
 interface Contexto {
-    data:null
+    productoSeleccionado:string,
+    setProductoSeleccionado:{
+        (a:string):void
+    }
 }
 
 //------Datos Seccion-----
