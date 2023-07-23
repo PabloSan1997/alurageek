@@ -1,3 +1,4 @@
+import {Contactanos} from "../components/Contactanos";
 import { Header } from "../components/Header";
 import { Seccion } from "../components/Seccion";
 import { BannerPromocion } from "../components/bannerPromocion";
@@ -13,6 +14,7 @@ export  function Home() {
         {categorias.map(elemento=>(
           <Seccion key={elemento} categoria={elemento}/>
         ))}
+        <Contactanos/>
     </>
   )
 }

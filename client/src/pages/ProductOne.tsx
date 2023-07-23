@@ -4,6 +4,7 @@ import React from 'react';
 import { initialSTate, leerUnoProducto } from '../Api/leerUnoProducto';
 import Descripcion from '../components/Descripcion';
 import { ProductosRelacionados } from '../components/ProductosRelacionados';
+import {Contactanos} from '../components/Contactanos';
 
 
 export function ProductOne() {
@@ -23,6 +24,7 @@ export function ProductOne() {
             <Header />
             <Descripcion {...producto} />
             <ProductosRelacionados categoria={producto.categoria}/>
+            <Contactanos/>
         </>
     )
 }
