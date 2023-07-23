@@ -4,6 +4,7 @@
     display: flex;
     background: $AzulFondo;
     padding: 60px 0;
+    height: 240px;
     .img_logo{
         margin: 0 0 auto 2%;
     }
@@ -11,7 +12,7 @@
         height: 100%;
         display: flex;
         width: fit-content;
-        margin: auto 0 auto 10%;
+        margin: 0 0 0 10%;
         ul{
             list-style: none;
             height: 100%;

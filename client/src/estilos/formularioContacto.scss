@@ -1,0 +1,32 @@
+@import 'index.scss';
+.formularioContacto{
+    width: 40%;
+    margin: auto;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    .titulo_formulario{
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $GrisLetra;
+    }
+    .datos_formulario{
+        width: 100%;
+        margin:auto;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        label{
+            font-size: .8rem;
+            color: $GrisLetra;
+        }
+        .entrada{
+            border: none;
+            font-size: 1.2rem;
+            outline: none;
+            margin: 2px 0;
+            resize: none;
+        }
+    }
+}
