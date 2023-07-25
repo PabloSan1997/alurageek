@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { Productos } from './pages/Productos';
 import { Editar } from './pages/Editar';
 import {ProductOne} from './pages/ProductOne';
+import { Login } from './pages/Login';
 
 
 
@@ -30,6 +31,10 @@ const Rutas = () => useRoutes([
   {
     path:'/products/especifico/:id_product',
     element:<ProductOne/>
+  },
+  {
+    path:'/login',
+    element:<Login/>
   }
 ]);
 
