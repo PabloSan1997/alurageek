@@ -39,6 +39,17 @@ interface ProductoRes {
     descripcion: string,
     imageurl:string
 }
+type InicioSesion = {
+    email:string,
+    contra:string
+}|{token:string}
+
+type InicioResponse ={
+    token: string,
+	nombre: string,
+	entrada: boolean,
+    message:string
+}
 //----------------------------------------
 
 interface Permiso {
@@ -51,6 +62,11 @@ interface Contexto {
     productoSeleccionado:string,
     setProductoSeleccionado:{
         (a:string):void
+    },
+    nombre:string,
+    permiso:boolean,
+    solicitudIniico:{
+        (a:InicioSesion):void
     }
 }
 

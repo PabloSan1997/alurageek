@@ -1,13 +1,16 @@
 import React from 'react'
 import '../estilos/inicioSesion.scss';
+import { UseContexto } from '../context';
+
 
 export function InicioSeccion() {
-  const [entradas, setEntradas] = React.useState({ email: '', contra: '' })
+  const [entradas, setEntradas] = React.useState({ email: '', contra: '' });
+  const {solicitudIniico} = UseContexto();
   const [estilos, setEstilos] = React.useState({
     email:{},
     contra:{}
   });
-  const entrar = (e: React.FormEvent<HTMLFormElement>) => {
+  const entrar =(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(!entradas.contra || !entradas.email){
       const email = !entradas.email?{background:'rgb(245, 212, 212)'}:{};
@@ -19,11 +22,12 @@ export function InicioSeccion() {
         }
       );
     }else{
-      alert('Se mando ubicacion');
-      setEstilos( {
-        email:{},
-        contra:{}
-      });
+      solicitudIniico(entradas);
+       setEstilos( {
+          email:{},
+          contra:{}
+        });
+      
     }
   }
   const setEmail = (e:React.ChangeEvent<HTMLInputElement>) => {
