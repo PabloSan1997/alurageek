@@ -20,11 +20,13 @@ export function ProvedorContexto({ children }: PropsContexto) {
             alert(error);
         }
     }
+
     const galleta = cookie.galleta as string;
-    console.log(permiso, nombre);
+
     React.useEffect(() => {
         setInicio({ token: galleta });
     }, [galleta]);
+    
     React.useEffect(() => {
         void (async () => {
             try {
@@ -36,7 +38,8 @@ export function ProvedorContexto({ children }: PropsContexto) {
                 setNombre('');
             }
         })();
-    }, [inicio])
+    }, [inicio]);
+
     return (
         <Contexto.Provider
             value={{
