@@ -67,6 +67,9 @@ interface Contexto {
     permiso:boolean,
     solicitudIniico:{
         (a:InicioSesion):void
+    },
+    removeCookie:{
+        (a:string):void
     }
 }
 

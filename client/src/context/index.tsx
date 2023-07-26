@@ -7,7 +7,7 @@ const Contexto = React.createContext({});
 
 export function ProvedorContexto({ children }: PropsContexto) {
     const [productoSeleccionado, setProductoSeleccionado] = React.useState<string>('');
-    const [cookie, setCookie] = useCookies(['galleta']);
+    const [cookie, setCookie, removeCookie] = useCookies(['galleta']);
     const [inicio, setInicio] = React.useState<InicioSesion>({ token: '' });
     const [permiso, setPermiso] = React.useState(false);
     const [nombre, setNombre] = React.useState('');
@@ -44,7 +44,8 @@ export function ProvedorContexto({ children }: PropsContexto) {
                 setProductoSeleccionado,
                 nombre,
                 permiso,
-                solicitudIniico
+                solicitudIniico,
+                removeCookie
             }}
         >
             {children}

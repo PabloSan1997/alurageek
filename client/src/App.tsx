@@ -4,6 +4,7 @@ import { Productos } from './pages/Productos';
 import { Editar } from './pages/Editar';
 import {ProductOne} from './pages/ProductOne';
 import { Login } from './pages/Login';
+import { NuevoProducto } from './pages/NuevoProducto';
 
 
 
@@ -35,6 +36,10 @@ const Rutas = () => useRoutes([
   {
     path:'/login',
     element:<Login/>
+  },
+  {
+    path:'/agregar',
+    element:<NuevoProducto/>
   }
 ]);
 
