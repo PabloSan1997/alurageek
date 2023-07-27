@@ -20,11 +20,19 @@ interface SolicitudBody {
     },
     body:string
 }
+interface SolicitudAdmin {
+    method:'PUT' | 'POST' | 'PATCH',
+    headers:{
+        'Content-Type':'application/json',
+        cabeza:string,
+        token:string
+    },
+    body:string
+}
 //---------------------
 
 //-------------Solicitudes------------
 interface ProductosReq{
-    id_product: string,
     nombre: string,
     precio: number,
     categoria: string,
@@ -50,6 +58,7 @@ type InicioResponse ={
 	entrada: boolean,
     message:string
 }
+
 //----------------------------------------
 
 interface Permiso {
@@ -70,6 +79,9 @@ interface Contexto {
     },
     removeCookie:{
         (a:string):void
+    },
+    cookie:{
+        galleta:string
     }
 }
 

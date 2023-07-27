@@ -9,6 +9,7 @@ const solicitudGET: Solicitud = {
         "Content-Type":"application/json"
     }
 }
+
 export  {
     cabeza,
     urlBaseProductos,

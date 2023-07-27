@@ -1,15 +1,15 @@
 {
-  "name": "client",
+  "name": "alurageek",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -29,6 +29,19 @@
     "eslint-plugin-react-refresh": "^0.4.1",
     "gh-pages": "^5.0.0",
     "typescript": "^5.0.2",
-    "vite": "^4.4.0"
-  }
+    "vite": "^4.4.7"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "Pablo SG",
+  "license": "ISC",
+  "description": "Esta pagina es para el reto de alura geek",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloSan1997/alurageek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PabloSan1997/alurageek/issues"
+  },
+  "homepage": "https://github.com/PabloSan1997/alurageek#readme"
 }
