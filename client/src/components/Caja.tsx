@@ -8,7 +8,10 @@ export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX
     const { permiso, cookie } = UseContexto();
     const borrar = () => {
         borrarProducto(id_product, cookie.galleta)
-            .then(message => alert(message.message))
+            .then(message => {
+                alert(message.message);
+                window.location.reload();
+            })
             .catch(error => alert(error));
     }
     return (
