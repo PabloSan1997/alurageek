@@ -40,6 +40,10 @@ const Rutas = () => useRoutes([
   {
     path:'/agregar',
     element:<NuevoProducto/>
+  },
+  {
+    path:'/editar/:id_product',
+    element:<Editar/>
   }
 ]);
 

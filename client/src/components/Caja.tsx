@@ -3,9 +3,11 @@ import { UseContexto } from "../context";
 import basurero from '../asserts/basura.svg';
 import lapiz from '../asserts/lapiz.svg';
 import { borrarProducto } from "../Api/borrarProducto";
+import {useNavigate} from 'react-router-dom';
 
 export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX.Element {
     const { permiso, cookie } = UseContexto();
+    const navegar = useNavigate();
     const borrar = () => {
         borrarProducto(id_product, cookie.galleta)
             .then(message => {
@@ -13,6 +15,9 @@ export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX
                 window.location.reload();
             })
             .catch(error => alert(error));
+    }
+    const ir =()=>{
+        navegar(`/editar/${id_product}`);
     }
     return (
         <div className="caja">
@@ -30,6 +35,7 @@ export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX
                         alt="editar"
                         className="opcion"
                         id="editar" 
+                        onClick={ir}
                         />
                 </div>
             ) : null}

@@ -1,21 +1,9 @@
 import React from 'react'
 import { agregarApiProducto } from '../Api/agregarProducto';
 import { UseContexto } from '../context';
+import { inicioEstilos, initalState } from '../utilities/initialState';
 
-const initalState: ProductosReq = {
-  imageurl: '',
-  nombre: '',
-  precio: 0,
-  descripcion: 'Consolas',
-  categoria: ''
-}
-const inicioEstilos = {
-  imageurl: {},
-  nombre: {},
-  precio: {},
-  descripcion: {},
-  categoria: {}
-}
+
 export function AgregarProducto() {
   const [nuevoProducto, setNuevoProducto] = React.useState<ProductosReq>(initalState);
   const [estilos, setEstilos] = React.useState(inicioEstilos);
@@ -23,7 +11,6 @@ export function AgregarProducto() {
 
   const agregar = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(estilos);
     const { imageurl, nombre, categoria, precio, descripcion } = nuevoProducto;
     if (!imageurl || !nombre || !categoria || isNaN(precio) || !descripcion) {
       alert('llene todos los campos');

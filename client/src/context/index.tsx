@@ -15,7 +15,7 @@ export function ProvedorContexto({ children }: PropsContexto) {
     const solicitudIniico = async (ini: InicioSesion): Promise<void> => {
         try {
             const mandar = await inicioSecion(ini);
-            setCookie('galleta', mandar.token, { maxAge: 1000 });
+            setCookie('galleta', mandar.token, { maxAge:60*60*24 });
         } catch (error) {
             alert(error);
         }
