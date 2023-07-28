@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { leerCategoria } from '../Api/leerCategoria';
 import '../estilos/seccion.scss'
 import { cortarInformacion } from '../utilities/cortarInfo';
+import { Caja } from './Caja';
 
 export function Seccion({ categoria }: Seccion) {
   const [productosCategoria, setProductosCategoria] = React.useState<ProductoRes[]>([]);
@@ -27,13 +28,3 @@ export function Seccion({ categoria }: Seccion) {
   )
 }
 
-export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX.Element {
-  return (
-    <div className="caja">
-      <img src={imageurl} alt={nombre} />
-      <h3>{nombre}</h3>
-      <span>${precio}</span>
-      <Link to={`/products/especifico/${id_product}`} className='ver_todo'>Ver producto</Link>
-    </div>
-  );
-}

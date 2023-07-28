@@ -10,12 +10,14 @@ const pageAgregar = '/agregar';
 export function Header() {
   const navegar = useNavigate();
   const location = useLocation();
-  const { permiso } = UseContexto();
+  const { permiso, nombre } = UseContexto();
   const {removeCookie} = UseContexto();
+
   const cerrarSecion = () =>{
     removeCookie('galleta');
     window.location.reload();
   }
+
   return (
     <header>
       <h1><Link to='/'><img src={tituloLogo} alt="titulo logo" /></Link></h1>
@@ -23,10 +25,11 @@ export function Header() {
       { !permiso ?
         (location.pathname !== pageLogin && <button className='botonHeader' onClick={() => navegar('/login')}>Login</button>) :
         (
-          <>
-           {location.pathname !== pageAgregar && <button className='botonHeader' onClick={()=>navegar('/agregar')}>Agregar Producto</button>}
-            <button className='botonHeader' onClick={cerrarSecion}>Logout</button>
-          </>
+          <div className="area_boton">
+            <span className='usuario_nombre'>{nombre}</span>
+            {location.pathname !== pageAgregar && <button className='botonHeader' id="agregar" onClick={()=>navegar('/agregar')}>Agregar</button>}
+            <button className='botonHeader' id="logout" onClick={cerrarSecion}>Logout</button>
+          </div>
         )
       }
     </header>

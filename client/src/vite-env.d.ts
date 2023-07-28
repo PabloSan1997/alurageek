@@ -29,6 +29,14 @@ interface SolicitudAdmin {
     },
     body:string
 }
+interface SolicitudBorrar{
+    method:'DELETE',
+    headers:{
+        'Content-Type':'application/json',
+        cabeza:string,
+        token:string
+    }
+}
 //---------------------
 
 //-------------Solicitudes------------

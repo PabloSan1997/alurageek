@@ -35,15 +35,39 @@ header{
             cursor: pointer;
         }
     }
+    .area_boton{
+        display: flex;
+        margin-right: 5%;
+        .usuario_nombre{
+            margin: auto 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: $GrisLetra;
+        }
+        .botonHeader{
+            width: 100%;
+            &#logout{
+                margin-right: 0;
+                width: fit-content;
+            }
+            &#agregar{
+                width: 180px;
+                width: fit-content;
+                margin-right: 10px;
+            }
+        }
+    }
 }
+
 .botonHeader{
     width: fit-content;
     height: fit-content;
     margin: auto 5% auto auto;
-    padding: 10px 50px;
+    border: none;
     background: none;
-    border: 1px solid $AzulBoton;
     color: $AzulBoton;
+    font-size: 1rem;
+    text-decoration: underline;
     cursor: pointer;
     &:hover{
         background: #ecf2fa;

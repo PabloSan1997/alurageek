@@ -1,8 +1,9 @@
 import React from 'react'
 import { leerCategoria } from '../Api/leerCategoria';
 import { cortarInformacion } from '../utilities/cortarInfo';
-import { Caja } from './Seccion';
+
 import { UseContexto } from '../context';
+import { Caja } from './Caja';
 
 export function ProductosRelacionados({ categoria }: Seccion) {
     const [productosCategoria, setProductosCategoria] = React.useState<ProductoRes[]>([]);

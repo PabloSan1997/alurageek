@@ -1,9 +1,8 @@
-
-
 import React from 'react'
 import { leerCategoria } from '../Api/leerCategoria';
 import { leerTodosLosProductos } from '../Api/leerRodosProductos';
-import { Caja } from './Seccion';
+import { Caja } from './Caja';
+
 
 export default function ContenedorCajas({categoria}:{categoria:string|undefined}) {
     const [productos, setProductos] = React.useState<ProductoRes[]>([]);

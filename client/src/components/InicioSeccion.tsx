@@ -49,7 +49,7 @@ export function InicioSeccion() {
           style={estilos.email}
         />
         <input
-          type="text"
+          type="password"
           className="entrada"
           placeholder='Contraseña'
           value={entradas.contra}

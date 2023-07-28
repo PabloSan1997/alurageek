@@ -32,14 +32,27 @@
 .caja{
     display: flex;
     flex-direction: column;
-    img{
+    align-items: end;
+    .area_opciones{
+        position: absolute;
+        display: flex;
+        .opcion{
+            margin: 0 3px;
+            filter: drop-shadow(0 0 2px rgb(2, 0, 0));
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+    .imagen_producto{
         width: 100%;
         height: 120px;
     }
     h3{
         font-size: 0.9rem;
         font-weight: 500;
-        margin: 5px 0;
+        margin: 5px auto 5px 0;
         color: rgb(70, 70, 70);
     }
     span{
@@ -51,5 +64,6 @@
         text-decoration: none;
         color: $AzulBoton;
         font-size: 0.9rem;
+        margin: 0 auto 0 0;
     }
 }
