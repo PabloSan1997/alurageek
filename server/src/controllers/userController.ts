@@ -55,7 +55,7 @@ export class UserController {
             dato.contra = await bcrypt.hash(contra, 5);
             await repositorio.manager.save(dato);
             const token = jwt.sign({...dato}, PALABRA);
-            res.json({token, nombre:dato.nombre, entrada:true});
+            res.json({token, nombre:dato.nombre, entrada:true, superUusario:dato.superUusario});
         } catch (error) {
             next(error);
         }
@@ -74,7 +74,7 @@ export class UserController {
         if(usuario.length===0 && usuario[0].superUusario){
             throw 'No tienes permiso';
         }
-        res.json({entrada:true, token, nombre:usuario[0].nombre});
+        res.json({entrada:true, token, nombre:usuario[0].nombre, superUusario:usuario[0].superUusario});
         } catch (error) {
             res.json({entrada:false});
         }
