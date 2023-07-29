@@ -6,7 +6,7 @@ import { borrarProducto } from "../Api/borrarProducto";
 import {useNavigate} from 'react-router-dom';
 
 export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX.Element {
-    const { permiso, cookie } = UseContexto();
+    const { permiso, cookie, superUusario } = UseContexto();
     const navegar = useNavigate();
     const borrar = () => {
         borrarProducto(id_product, cookie.galleta)
@@ -21,7 +21,7 @@ export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX
     }
     return (
         <div className="caja">
-            {permiso ? (
+            {permiso && superUusario ? (
                 <div className="area_opciones">
                     <img
                         src={basurero}

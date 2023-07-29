@@ -75,7 +75,7 @@ export function AgregarProducto() {
           onChange={escribirPrecio}
           min={0}
           max={500000}
-          step={0.001}
+          step={0.01}
           style={estilos.precio}
         />
         <select

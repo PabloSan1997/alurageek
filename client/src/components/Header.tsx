@@ -10,7 +10,7 @@ const pageAgregar = '/agregar';
 export function Header() {
   const navegar = useNavigate();
   const location = useLocation();
-  const { permiso, nombre } = UseContexto();
+  const { permiso, nombre, superUusario } = UseContexto();
   const {removeCookie} = UseContexto();
 
   const cerrarSecion = () =>{
@@ -27,7 +27,7 @@ export function Header() {
         (
           <div className="area_boton">
             <span className='usuario_nombre'>{nombre}</span>
-            {location.pathname !== pageAgregar && <button className='botonHeader' id="agregar" onClick={()=>navegar('/agregar')}>Agregar</button>}
+            {location.pathname !== pageAgregar && superUusario && <button className='botonHeader' id="agregar" onClick={()=>navegar('/agregar')}>Agregar</button>}
             <button className='botonHeader' id="logout" onClick={cerrarSecion}>Logout</button>
           </div>
         )

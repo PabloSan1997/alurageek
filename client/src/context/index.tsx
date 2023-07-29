@@ -11,7 +11,7 @@ export function ProvedorContexto({ children }: PropsContexto) {
     const [inicio, setInicio] = React.useState<InicioSesion>({ token: '' });
     const [permiso, setPermiso] = React.useState(false);
     const [nombre, setNombre] = React.useState('');
-
+    const [superUusario, setSuperUusario] = React.useState(false);
     const solicitudIniico = async (ini: InicioSesion): Promise<void> => {
         try {
             const mandar = await inicioSecion(ini);
@@ -33,6 +33,7 @@ export function ProvedorContexto({ children }: PropsContexto) {
                 const checar = await inicioSecionToken(inicio);
                 setPermiso(checar.entrada);
                 setNombre(checar.nombre);
+                setSuperUusario(checar.superUusario);
             } catch (error) {
                 setPermiso(false);
                 setNombre('');
@@ -47,6 +48,7 @@ export function ProvedorContexto({ children }: PropsContexto) {
                 setProductoSeleccionado,
                 nombre,
                 permiso,
+                superUusario,
                 solicitudIniico,
                 removeCookie,
                 cookie

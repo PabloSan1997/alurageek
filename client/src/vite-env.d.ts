@@ -64,7 +64,8 @@ type InicioResponse ={
     token: string,
 	nombre: string,
 	entrada: boolean,
-    message:string
+    message:string,
+    superUusario: boolean
 }
 
 //----------------------------------------
@@ -90,7 +91,8 @@ interface Contexto {
     },
     cookie:{
         galleta:string
-    }
+    },
+    superUusario:boolean
 }
 
 //------Datos Seccion-----
