@@ -49,6 +49,10 @@ const Rutas = () => useRoutes([
   {
     path:'/buscar/:buscar',
     element:<Buscar/>
+  },
+  {
+    path:'*',
+    element:<p className='not-found'>Not found 404</p>
   }
 ]);
 

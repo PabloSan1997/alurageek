@@ -108,7 +108,7 @@ export function EditarProducto(producto: ProductoRes) {
                 <button
                     className="boton"
                     type="submit"
-                >Agregar</button>
+                >Editar</button>
             </form>
         </div>
     )
