@@ -12,6 +12,7 @@ export function AgregarProducto() {
   const agregar = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { imageurl, nombre, categoria, precio, descripcion } = nuevoProducto;
+    console.log(categoria);
     if (!imageurl || !nombre || !categoria || isNaN(precio) || !descripcion) {
       alert('llene todos los campos');
       setEstilos({
@@ -80,7 +81,7 @@ export function AgregarProducto() {
         />
         <select
           className='entrada'
-          defaultValue={'Categoria'}
+          defaultValue={'Consolas'}
           onChange={escribirCategoria}
           style={estilos.categoria}
           >

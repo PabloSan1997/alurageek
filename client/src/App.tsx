@@ -5,6 +5,7 @@ import { Editar } from './pages/Editar';
 import {ProductOne} from './pages/ProductOne';
 import { Login } from './pages/Login';
 import { NuevoProducto } from './pages/NuevoProducto';
+import { Buscar } from './pages/Buscar';
 
 
 
@@ -44,6 +45,10 @@ const Rutas = () => useRoutes([
   {
     path:'/editar/:id_product',
     element:<Editar/>
+  },
+  {
+    path:'/buscar/:buscar',
+    element:<Buscar/>
   }
 ]);
 

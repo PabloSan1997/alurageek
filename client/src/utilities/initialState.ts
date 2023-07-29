@@ -2,8 +2,8 @@ export const initalState: ProductosReq = {
     imageurl: '',
     nombre: '',
     precio: 0,
-    descripcion: 'Consolas',
-    categoria: ''
+    descripcion: '',
+    categoria: 'Consolas'
   }
   export const inicioEstilos = {
     imageurl: {},
