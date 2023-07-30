@@ -12,3 +12,12 @@ export const initalState: ProductosReq = {
     descripcion: {},
     categoria: {}
   }
+
+  export const initialStateProduct:ProductoRes = {
+    id_product: '',
+    nombre: '',
+    precio: 0,
+    categoria: '',
+    descripcion: '',
+    imageurl: ''
+}

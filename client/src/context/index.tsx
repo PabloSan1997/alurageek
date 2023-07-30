@@ -12,6 +12,7 @@ export function ProvedorContexto({ children }: PropsContexto) {
     const [permiso, setPermiso] = React.useState(false);
     const [nombre, setNombre] = React.useState('');
     const [superUusario, setSuperUusario] = React.useState(false);
+
     const solicitudIniico = async (ini: InicioSesion): Promise<void> => {
         try {
             const mandar = await inicioSecion(ini);
