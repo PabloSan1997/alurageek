@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     background-image:url(../asserts//Hero.png);
-    background-position: center;
+    background-attachment: fixed;
+    background-position:0 -100px;
     height: 330px;
     color: white;
     h2{
