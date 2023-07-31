@@ -10,7 +10,8 @@ const opciones: string[] = ['Quienes somos',
 export  function Contactanos() {
     return (
         <div className="area_contacto">
-            <img src={logo} alt="logo titulo" className='img_logo' />
+           <div className="area_sol">
+           <img src={logo} alt="logo titulo" className='img_logo' />
                 <nav className='menu_lista'>
                     <ul>
                         {opciones.map(elemento=>(
@@ -18,6 +19,7 @@ export  function Contactanos() {
                         ))}
                     </ul>
                 </nav>
+           </div>
                 <FomularioContacto/>
         </div>
     )

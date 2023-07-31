@@ -5,6 +5,7 @@
     background-image:url(../asserts//Hero.png);
     background-attachment: fixed;
     background-position:0 -100px;
+    background-size:cover ;
     height: 330px;
     color: white;
     h2{
@@ -19,5 +20,12 @@
     }
     .boton{
         margin: 0 auto 2% 8%;
+    }
+}
+
+@media (max-width:838px){
+    .banner_promocion{
+        background-position:-230px -100px;
+        height: 352px;
     }
 }

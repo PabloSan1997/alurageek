@@ -1,32 +1,56 @@
 @import 'index.scss';
+
 .area_formulario {
     width: 100%;
     padding: 50px 0;
     background: #F5F5F5;
+
     .inicio_sección {
         width: 550px;
         margin: auto;
         display: flex;
         flex-direction: column;
         margin-top: 2%;
+
         h2 {
             margin: auto auto 10px auto;
             font-size: 18px;
             font-weight: bold;
             color: $GrisLetra;
         }
-        .entrada{
+
+        .entrada {
             width: calc(100% - 20px);
             margin: 15px 0;
             font-size: 16px;
             outline: none;
             border: none;
-            padding:20px 10px ;
+            padding: 20px 10px;
         }
-        .boton{
+
+        .boton {
             width: 100%;
             margin-top: 10px;
             font-size: 18px;
         }
     }
+}
+
+@media (max-width:770px) {
+    .area_formulario {
+        .inicio_sección {
+            width: 90%;
+            h2{
+                font-size: 1rem;
+            }
+            .entrada {
+                padding: 10px 10px;
+                font-size: 1rem;
+            }
+            .boton{
+                padding: 10px 0;
+            }
+        }
+    }
+
 }

@@ -1,7 +1,7 @@
 
-const limites_data = 6;
 
-export function cortarInformacion(productos:ProductoRes[]):ProductoRes[]{
+
+export function cortarInformacion(productos:ProductoRes[], limites_data:number):ProductoRes[]{
     if(productos.length<=limites_data){
         return productos;
     }

@@ -79,3 +79,39 @@ header{
         background: #ecf2fa;
     }
 }
+
+@media (max-width:838px){
+    header .buscador .buscar{
+        width: 300px;
+    }
+}
+@media (max-width:770px){
+    header{
+        height: 80px;
+    }
+    header .buscador .buscar{
+        width: 180px;
+    }
+    header h1 img{
+        width: 120px;
+    }
+    header .buscador .buscar{
+        font-size: .9rem;
+    }
+    header .area_boton{
+        .usuario_nombre{
+            font-size: .8rem;
+            margin: auto 10px;
+        }
+        .botonHeader{
+            &#logout{
+                font-size: .8rem;
+                margin: auto 1px;
+            }
+            &#agregar{
+                font-size: .8rem;
+                margin: auto 2px;
+            }
+        }
+    }
+}

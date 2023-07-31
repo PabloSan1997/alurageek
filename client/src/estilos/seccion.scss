@@ -68,3 +68,22 @@
         margin: 0 auto 0 0;
     }
 }
+@media (max-width:770px){
+    .seccion{
+        .area_pagina{
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    .caja{
+       
+        h3{
+            font-size: 0.8rem;
+        }
+        span{
+           font-size: .8rem;
+        }
+        a{
+            font-size: 0.8rem;
+        }
+    }
+}
