@@ -31,14 +31,18 @@
         }
         p{
            margin: 0 auto auto 2%; 
+           overflow-y: auto;
+           max-height: 150px;
         }
     }
 }
 @media (max-width:770px){
     .descripcion_producto{
+        margin:auto auto 10px auto;
+        height: 200px;
         .parte{
             img{
-                max-height:300px;
+                max-height:200px;
                 
             }
             h2{
@@ -46,6 +50,34 @@
                 color: $GrisLetra;
                 font-size: 1.8rem;
                 margin: auto auto 0 2%;
+    
+            }
+            span{
+                font-size: 1rem;
+            }
+            p{
+               font-size: .8rem;
+               overflow-y: scroll;
+               height:40%;
+            }
+        }
+    }
+}
+@media (max-width:509px){
+    .descripcion_producto{
+       flex-direction: column;
+       height: fit-content;
+        .parte{
+            width: 100%;
+            &.area_imagen{
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+            h2{
+                font-size: 1.3rem;
+                margin: 15px auto auto 0;
     
             }
             span{

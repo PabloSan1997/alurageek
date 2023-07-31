@@ -41,7 +41,7 @@ export function InicioSeccion() {
       <form className="inicio_sección" onSubmit={entrar}>
         <h2>Iniciar Sesión</h2>
         <input
-          type="text"
+          type="email"
           className="entrada"
           placeholder='Correo Electrónico'
           value={entradas.email}

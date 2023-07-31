@@ -22,7 +22,7 @@ export function ProvedorContexto({ children }: PropsContexto) {
       if(width>770){
         opciones=6;
       }
-      else if(width<=770){
+      else if(width<=770 && width>=509){
         opciones=4
       }else{
        opciones = 2;

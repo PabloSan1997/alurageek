@@ -90,7 +90,7 @@ header{
         height: 80px;
     }
     header .buscador .buscar{
-        width: 180px;
+        width: 150px;
     }
     header h1 img{
         width: 120px;
@@ -111,6 +111,25 @@ header{
             &#agregar{
                 font-size: .8rem;
                 margin: auto 2px;
+            }
+        }
+    }
+}
+@media (max-width:530px){
+    header .buscador{
+       display: none;
+    }
+    header .area_boton{
+        margin: auto 5% auto auto;
+        .usuario_nombre{
+            display: none;
+        }
+        .botonHeader{
+            &#logout{
+                font-size: .8rem;
+            }
+            &#agregar{
+                font-size: .8rem;
             }
         }
     }

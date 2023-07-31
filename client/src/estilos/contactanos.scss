@@ -57,11 +57,42 @@
                 height: 100%;
                 margin: 0;
                 ul {
-                   
-    
                     li {
-                   
+                        margin: auto;
     
+                        a {
+                            font-size:1rem;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+@media (max-width:509px){
+    .area_contacto {
+     flex-direction: column;
+        .area_sol {
+            flex-direction: column; 
+            width: 100%;
+            margin: 0;
+            width: 100%;
+            .img_logo {
+                margin: auto;
+                width: 50%;
+            }
+    
+            .menu_lista {
+                height: 100%;
+                margin: 0;
+                margin: auto;
+                width: 100%;
+                ul {
+                   width: fit-content;
+                   margin: auto;
+                    li {
+                   margin:10px auto;
                         a {
                             font-size:1rem;
                         }

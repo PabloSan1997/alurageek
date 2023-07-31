@@ -1,32 +1,54 @@
 @import 'index.scss';
-.formularioContacto{
+
+.formularioContacto {
     width: 40%;
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    .titulo_formulario{
+
+    .titulo_formulario {
         font-size: 1.1rem;
         font-weight: 600;
         color: $GrisLetra;
     }
-    .datos_formulario{
-        width: 100%;
-        margin:auto;
+
+    .datos_formulario {
+        width: 90%;
+        margin: auto;
         background: white;
         display: flex;
         flex-direction: column;
         padding: 5px;
-        margin: 10px auto;
-        label{
+        margin: 10px 0;
+
+        label {
             font-size: .8rem;
             color: $GrisLetra;
         }
-        .entrada{
+
+        .entrada {
             border: none;
             font-size: 1.2rem;
             outline: none;
             margin: 2px 0;
             resize: none;
         }
+    }
+}
+
+@media(max-width:770px) {
+    .formularioContacto .titulo_formulario {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:509px) {
+    .formularioContacto {
+        width: 80%;
+        margin: 10px auto;
+        .datos_formulario{
+            width: 100%;
+        }
+
     }
 }

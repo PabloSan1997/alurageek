@@ -87,3 +87,24 @@
         }
     }
 }
+@media (max-width:509px){
+    .seccion{
+        .area_pagina{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .caja{
+        .imagen_producto{
+            height: 150px;
+        }
+        h3{
+            font-size: 0.8rem;
+        }
+        span{
+           font-size: .8rem;
+        }
+        a{
+            font-size: 0.8rem;
+        }
+    }
+}
