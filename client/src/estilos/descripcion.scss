@@ -34,3 +34,26 @@
         }
     }
 }
+@media (max-width:770px){
+    .descripcion_producto{
+        .parte{
+            img{
+                max-height:300px;
+                
+            }
+            h2{
+                font-weight: 600;
+                color: $GrisLetra;
+                font-size: 1.8rem;
+                margin: auto auto 0 2%;
+    
+            }
+            span{
+                font-size: 1rem;
+            }
+            p{
+               font-size: .8rem;
+            }
+        }
+    }
+}

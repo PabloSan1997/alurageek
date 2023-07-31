@@ -5,33 +5,14 @@ import '../estilos/seccion.scss'
 import { cortarInformacion } from '../utilities/cortarInfo';
 import { Caja } from './Caja';
 import { Loading } from './Loading';
+import { UseContexto } from '../context';
 
 export function Seccion({ categoria }: Seccion) {
   const [productosCategoria, setProductosCategoria] = React.useState<ProductoRes[]>([]);
   const [loading, setLoading] = React.useState(true);
-  const [width, setWidth] = React.useState(window.innerWidth);
-  const [limite, setLimite] = React.useState(6);
- 
+  const {limite} = UseContexto();
 
-  React.useEffect(()=>{
-    let opciones = 6;
-    if(width>770){
-      opciones=6;
-    }
-    else if(width<=770){
-      opciones=4
-    }else{
-     opciones = 2;
-    }
-    setLimite(opciones);
-    
-  },[width]);
 
-  React.useEffect(()=>{
-    window.addEventListener('resize', ()=>{
-      setWidth(window.innerWidth);
-    });
-  },[]);
   
 
   React.useEffect(() => {

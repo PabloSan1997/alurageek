@@ -13,6 +13,30 @@ export function ProvedorContexto({ children }: PropsContexto) {
     const [nombre, setNombre] = React.useState('');
     const [superUusario, setSuperUusario] = React.useState(false);
 
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const [limite, setLimite] = React.useState(6);
+   
+  
+    React.useEffect(()=>{
+      let opciones = 6;
+      if(width>770){
+        opciones=6;
+      }
+      else if(width<=770){
+        opciones=4
+      }else{
+       opciones = 2;
+      }
+      setLimite(opciones);
+      
+    },[width]);
+
+    React.useEffect(()=>{
+        window.addEventListener('resize', ()=>{
+          setWidth(window.innerWidth);
+        });
+      },[]);
+
     const solicitudIniico = async (ini: InicioSesion): Promise<void> => {
         try {
             const mandar = await inicioSecion(ini);
@@ -52,7 +76,8 @@ export function ProvedorContexto({ children }: PropsContexto) {
                 superUusario,
                 solicitudIniico,
                 removeCookie,
-                cookie
+                cookie,
+                limite
             }}
         >
             {children}

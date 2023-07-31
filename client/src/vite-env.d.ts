@@ -92,7 +92,8 @@ interface Contexto {
     cookie:{
         galleta:string
     },
-    superUusario:boolean
+    superUusario:boolean,
+    limite:number
 }
 
 //------Datos Seccion-----

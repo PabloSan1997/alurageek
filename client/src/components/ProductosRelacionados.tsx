@@ -7,16 +7,17 @@ import { Caja } from './Caja';
 
 export function ProductosRelacionados({ categoria }: Seccion) {
     const [productosCategoria, setProductosCategoria] = React.useState<ProductoRes[]>([]);
-    const {productoSeleccionado} = UseContexto();
+    const {productoSeleccionado, limite} = UseContexto();
+
     React.useEffect(() => {
       leerCategoria(categoria)
         .then(elementos => {
           const elementosMuestra = elementos.filter(ele=>ele.id_product!==productoSeleccionado);
-          setProductosCategoria(cortarInformacion(elementosMuestra))
+          setProductosCategoria(cortarInformacion(elementosMuestra, limite))
         })
         .catch(error => console.error(error));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [categoria]);
+    }, [categoria, limite]);
   
     return (
       <div className="seccion">
