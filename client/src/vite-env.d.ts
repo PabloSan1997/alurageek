@@ -3,7 +3,9 @@
 interface PropsContexto {
     children: JSX.Element | JSX.Element[]
 }
-
+interface NombreClase{
+    nombreClase:string
+}
 //-----------Solicitudes con la api-------------
 interface Solicitud {
     method:'GET' | 'DELETE',

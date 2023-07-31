@@ -19,7 +19,8 @@ export function Header() {
   }
 
   return (
-    <header>
+    <>
+    <header id="header1">
       <h1><Link to='/'><img src={tituloLogo} alt="titulo logo" /></Link></h1>
       <Buscador />
       { !permiso ?
@@ -33,5 +34,22 @@ export function Header() {
         )
       }
     </header>
+    <header id="header2">
+      <div className="area-header">
+      <h1><Link to='/'><img src={tituloLogo} alt="titulo logo" /></Link></h1>
+      { !permiso ?
+        (location.pathname !== pageLogin && <button className='botonHeader' onClick={() => navegar('/login')}>Login</button>) :
+        (
+          <div className="area_boton">
+            <span className='usuario_nombre'>{nombre}</span>
+            {location.pathname !== pageAgregar && superUusario && <button className='botonHeader' id="agregar" onClick={()=>navegar('/agregar')}>Agregar</button>}
+            <button className='botonHeader' id="logout" onClick={cerrarSecion}>Logout</button>
+          </div>
+        )
+      }
+      </div>
+      <Buscador />
+    </header>
+    </>
   )
 }

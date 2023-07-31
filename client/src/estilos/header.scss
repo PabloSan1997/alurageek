@@ -4,6 +4,9 @@ header{
     width: 100%;
     display: flex;
     height: 115px;
+    &#header2{
+        display: none;
+    }
     h1{
         margin: auto 0 auto 2%;
         height: fit-content;
@@ -116,10 +119,27 @@ header{
     }
 }
 @media (max-width:530px){
-    header .buscador{
-       display: none;
+   header{
+    &#header1{
+        display: none;
     }
-    header .area_boton{
+    &#header2{
+        display: flex;
+        flex-direction: column;
+        .area-header{
+            width: 100%;
+            display: flex;
+        }
+        .buscador{
+            width: 90%;
+            margin: auto;
+            .buscar{
+                width: 100%;
+            }
+        }
+    }
+    .area_boton{
+        
         margin: auto 5% auto auto;
         .usuario_nombre{
             display: none;
@@ -133,4 +153,6 @@ header{
             }
         }
     }
+    
+   }
 }
