@@ -7,6 +7,8 @@ import { inicioEstilos, initalState } from '../utilities/initialState';
 export function AgregarProducto() {
   const [nuevoProducto, setNuevoProducto] = React.useState<ProductosReq>(initalState);
   const [estilos, setEstilos] = React.useState(inicioEstilos);
+
+  //Se necesita del token que contiene la cookie para que el servidor de permiso para la accion
   const {cookie} = UseContexto();
 
   const agregar = (e: React.FormEvent<HTMLFormElement>) => {
