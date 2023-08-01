@@ -1,3 +1,7 @@
+
+//Estados iniciales para los diferentes formularios
+//Estados iniciales de valores de inputs y para los estilos
+
 export const initalState: ProductosReq = {
     imageurl: '',
     nombre: '',

@@ -8,7 +8,7 @@ import { NuevoProducto } from './pages/NuevoProducto';
 import { Buscar } from './pages/Buscar';
 
 
-
+//Liste de todos los rutes con sus respectivas paginas
 const Rutas = () => useRoutes([
   {
     path:'/home',
@@ -55,6 +55,7 @@ const Rutas = () => useRoutes([
     element:<p className='not-found'>Not found 404</p>
   }
 ]);
+
 
 function App() {
   

@@ -1,5 +1,6 @@
 import '../estilos/descripcion.scss'
 
+
 export default function Descripcion({nombre, imageurl, descripcion,  precio}:ProductoRes) {
   return (
     <div className="descripcion_producto">
