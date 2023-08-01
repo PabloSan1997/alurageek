@@ -2,7 +2,7 @@ import { UseContexto } from "../context";
 import basurero from '../asserts/basura.svg';
 import lapiz from '../asserts/lapiz.svg';
 import { borrarProducto } from "../Api/borrarProducto";
-import {Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX.Element {
     const { permiso, cookie, superUusario } = UseContexto();
