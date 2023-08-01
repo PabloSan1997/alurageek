@@ -2,6 +2,7 @@ import React from 'react'
 import '../estilos/inicioSesion.scss';
 import { UseContexto } from '../context';
 
+//Funciuonamiento parecido a los otros formularios
 
 export function InicioSeccion() {
   const [entradas, setEntradas] = React.useState({ email: '', contra: '' });

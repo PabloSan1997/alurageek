@@ -2,23 +2,27 @@ import React from 'react'
 import '../estilos/formularioContacto.scss'
 
 export function FomularioContacto() {
+    //Para registar el texto de los inputs
     const [entradas, setEntradas] = React.useState({ nombre: '', mensaje: '' });
+
+    //Registar los estilos de los elementos para la validacion
     const [estilos, setEstilo] = React.useState({
-        nombre:{},
-        mensaje:{}
+        nombre: {},
+        mensaje: {}
     }
     );
+
     const mandar = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        if(!entradas.nombre || !entradas.mensaje){
+        //Si hay campos vacios, se cambiaran sus estilos para señalarselos al usuario
+        if (!entradas.nombre || !entradas.mensaje) {
             alert('Llene todos los campos');
-            const nombre = !entradas.nombre?{color:'red'}:{};
-            const mensaje = !entradas.mensaje?{color:'red'}:{};
-            setEstilo({nombre, mensaje});
-        }else{
+            const nombre = !entradas.nombre ? { color: 'red' } : {};
+            const mensaje = !entradas.mensaje ? { color: 'red' } : {};
+            setEstilo({ nombre, mensaje });
+        } else {
             alert('Se mandó el mensaje');
-            setEstilo({nombre:{}, mensaje:{}});
+            setEstilo({ nombre: {}, mensaje: {} });
         }
     }
     const setNombre = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +50,7 @@ export function FomularioContacto() {
                     className='entrada'
                     value={entradas.mensaje}
                     onChange={setMensaje}
-                    ></textarea>
+                ></textarea>
             </div>
             <button className='boton' type='submit'>Enviar mensaje</button>
         </form>

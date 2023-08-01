@@ -7,17 +7,18 @@ import { Caja } from './Caja';
 import { Loading } from './Loading';
 import { UseContexto } from '../context';
 
+//Se filtran productos por categoria y se renderizar un numero limitado de elementos
+
 export function Seccion({ categoria }: Seccion) {
   const [productosCategoria, setProductosCategoria] = React.useState<ProductoRes[]>([]);
   const [loading, setLoading] = React.useState(true);
   const {limite} = UseContexto();
 
 
-  
-
   React.useEffect(() => {
     leerCategoria(categoria)
       .then(elementos => {
+        //Se limitan los numero de elementos
         setProductosCategoria(cortarInformacion(elementos, limite));
         setLoading(false)
       })
@@ -30,7 +31,7 @@ export function Seccion({ categoria }: Seccion) {
     <div className="seccion">
       <div className="titulos">
         <h2>{categoria}</h2>
-        <Link to={`/products/categoria/${categoria}`}>Ver Todos 🡪</Link>
+        <Link to={`/products/categoria/${categoria}`}>Ver Todos ➜</Link>
       </div>
       <div className="area_pagina">
         {productosCategoria.map(elementos => (

@@ -2,9 +2,13 @@ import '../estilos/contactanos.scss'
 import logo from '../asserts/tituloLogo.svg';
 import { FomularioContacto } from './FomularioContacto';
 
-const opciones: string[] = ['Quienes somos',
-    'Politica de Privacidad', 'Programa de fidelidad',
-    'Nuestras tiendas', 'Quiero ser franquiciado',
+//Opciones en la seccion de Contactanos
+const opciones: string[] = [
+    'Quienes somos',
+    'Politica de Privacidad',
+     'Programa de fidelidad',
+    'Nuestras tiendas', 
+    'Quiero ser franquiciado',
     'Anuncie aqui'];
 
 export  function Contactanos() {

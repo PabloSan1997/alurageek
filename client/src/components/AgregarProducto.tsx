@@ -12,7 +12,8 @@ export function AgregarProducto() {
   const agregar = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { imageurl, nombre, categoria, precio, descripcion } = nuevoProducto;
-    console.log(categoria);
+    
+    //Comprobar que no haya campos vacios para notificarselo al usuario
     if (!imageurl || !nombre || !categoria || isNaN(precio) || !descripcion) {
       alert('llene todos los campos');
       setEstilos({
@@ -23,6 +24,7 @@ export function AgregarProducto() {
         categoria: !categoria ? { background: 'rgb(245, 212, 212)' } : {}
       });
     }else{
+      //Generar nuevo producto
       setEstilos(inicioEstilos);
       agregarApiProducto(nuevoProducto, cookie.galleta)
       .then(message=>{
@@ -34,6 +36,7 @@ export function AgregarProducto() {
     }
   }
 
+  //Funciones para registrar los valores de los diferentes inputs
   const escribirUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNuevoProducto({ ...nuevoProducto, imageurl: e.target.value });
   }

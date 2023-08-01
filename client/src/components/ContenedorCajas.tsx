@@ -4,7 +4,8 @@ import { leerTodosLosProductos } from '../Api/leerRodosProductos';
 import { Caja } from './Caja';
 import { Loading } from './Loading';
 
-
+//Esta parte sirve para filtrar y renderizar los productos de una sola categoria
+//Si no esta la categoria definida renderiza todos los productos
 export default function ContenedorCajas({ categoria }: { categoria: string | undefined }) {
     const [productos, setProductos] = React.useState<ProductoRes[]>([]);
     const [loading, setLoading] = React.useState<boolean>(true);

@@ -1,5 +1,6 @@
 import '../estilos/footer.scss';
 
+//Pie de pagina para mandar al usuario al github del proyecto
 export  function Footer() {
   return (
     <footer>

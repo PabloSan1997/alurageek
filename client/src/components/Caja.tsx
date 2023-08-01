@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import { UseContexto } from "../context";
 import basurero from '../asserts/basura.svg';
 import lapiz from '../asserts/lapiz.svg';
 import { borrarProducto } from "../Api/borrarProducto";
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX.Element {
     const { permiso, cookie, superUusario } = UseContexto();
@@ -18,6 +17,10 @@ export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX
     }
     const ir =()=>{
         navegar(`/editar/${id_product}`);
+    }
+    const verProducto = () =>{
+        navegar(`/products/especifico/${id_product}`);
+        window.location.reload();
     }
     return (
         <div className="caja">
@@ -42,7 +45,7 @@ export function Caja({ nombre, precio, imageurl, id_product }: ProductoRes): JSX
             <img src={imageurl} alt={nombre} className="imagen_producto" />
             <h3>{nombre}</h3>
             <span>${precio}</span>
-            <Link to={`/products/especifico/${id_product}`} className='ver_todo'>Ver producto</Link>
+            <button className='ver_todo' onClick={verProducto}>Ver producto</button>
         </div>
     );
 }

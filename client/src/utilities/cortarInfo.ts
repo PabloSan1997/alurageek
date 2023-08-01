@@ -1,6 +1,6 @@
 
 
-
+//Generar un numero especifico de elementos para la secion de "productos relacionados"
 export function cortarInformacion(productos:ProductoRes[], limites_data:number):ProductoRes[]{
     if(productos.length<=limites_data){
         return productos;
