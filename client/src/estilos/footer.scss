@@ -4,7 +4,7 @@ footer{
     display: flex;
     flex-direction: column;
     p{
-        margin:15px auto 0 auto;
+        margin:0 auto 0 auto;
         a{
             color: $GrisLetra;
             text-decoration: none;
@@ -12,7 +12,10 @@ footer{
             text-decoration: underline;
         }
     }
-    span{
+    .fecha{
         margin:0 auto 15px auto;
+    }
+    .texto{
+        margin:10px auto;
     }
 }
